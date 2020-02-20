@@ -1,0 +1,52 @@
+<!--tujuannya berfungsi membuaat tampilan -->
+<odoo>
+    <data>
+        <!--Menampilkan tree view Jurusan-->
+        <record id="view_academic_jurusan_tree" model="ir.ui.view">            <!--model="ir.ui.view" basic dari odoo untuk menampilkan -->
+            <field name="name">academic.jurusan.tree </field>
+            <field name="model">academic.jurusan</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string ="Jurusan">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="responsible_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Codingan dibawah ini mirip dengan yang di atas tapi ada beberapa perubahan
+        Tree diganti Form-->
+        <record id="view_academic_jurusan_form" model="ir.ui.view">
+            <field name ="name">academic.jurusan.form</field>
+            <field name ="model">academic.jurusan</field>
+            <field name ="type">form</field>
+
+            <!-- disini ada perubahan yang signifikan-->
+            <field name ="arch" type="xml">
+                <form string="Jurusan form">
+                    <sheet>
+                        <div class="oe_tittle">
+                            <label for="name" class="oe_edit_only" string="Jurusan"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+
+                            <field name="responsible_id"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

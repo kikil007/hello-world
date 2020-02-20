@@ -1,0 +1,20 @@
+<dooo>
+    <data>
+        <!--Kelas dengan Tree-->
+        <record id="view_academic_kelas_tree" model="ir.ui.view">
+            <field name="name">view_academic_kelas_tree</field>
+            <field name="model">academic.kelas</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml"/>
+                <tree string="kelas">
+                    <field name="name"/>
+                    <field name="dosen_id"/>
+                    <field name="start_date"/>
+                    <field name="sks"/>
+                    <field name="seats"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
